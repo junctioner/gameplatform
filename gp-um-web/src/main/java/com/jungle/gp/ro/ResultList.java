@@ -22,7 +22,6 @@ public class ResultList<T> extends Result {
 
     public ResultList() {
         super();
-        this.setStatus(true);
     }
 
     public ResultList(List<T> data) {

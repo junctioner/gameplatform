@@ -20,7 +20,6 @@ public class ResultData<T> extends Result {
 
     public ResultData() {
         super();
-        this.setStatus(true);
     }
 
     public ResultData(T data) {

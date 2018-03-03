@@ -18,16 +18,16 @@ package com.jungle.gp.ro;
  */
 public class Result {
 
-    private boolean status;
+    private int code;
 
     private String message;
 
-    public boolean isStatus() {
-        return status;
+    public int getCode() {
+        return code;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setCode(int code) {
+        this.code = code;
     }
 
     public String getMessage() {
@@ -37,4 +37,5 @@ public class Result {
     public void setMessage(String message) {
         this.message = message;
     }
+    
 }

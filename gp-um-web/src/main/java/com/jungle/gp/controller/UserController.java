@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.jungle.gp.ro.Result;
 import com.jungle.gp.ro.ResultData;
 import com.jungle.gp.user.entity.User;
 import com.jungle.gp.user.service.UserService;
@@ -33,6 +34,17 @@ public class UserController {
     @RequestMapping("find")
     public ResultData<User> find(Integer id){
        return new ResultData<User>(this.userService.find(id));
+    }
+    
+    @RequestMapping("create")
+    public Result create(User user){
+        this.userService.save(user);
+        return new Result();
+    }
+    @RequestMapping("update")
+    public Result update(User user){
+        this.userService.save(user);
+        return new Result();
     }
 }
 

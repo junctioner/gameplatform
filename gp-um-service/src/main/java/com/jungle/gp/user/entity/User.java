@@ -1,5 +1,6 @@
 package com.jungle.gp.user.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +15,7 @@ public class User {
 	/**
 	 * 手机号
 	 */
+	@Column(name="abc")
 	private String mobile;
 
 	/**
@@ -27,7 +29,7 @@ public class User {
 	private String weixinId;
 
 	/**
-	 * 房卡数
+	 * 卡数
 	 */
 	private int cardNum;
 
@@ -70,5 +72,11 @@ public class User {
 	public void setCardNum(int cardNum) {
 		this.cardNum = cardNum;
 	}
+
+    @Override
+    public String toString() {
+        return String.format("User [id=%s, mobile=%s, name=%s, weixinId=%s, cardNum=%s]", id, mobile, name, weixinId,
+                cardNum);
+    }
 
 }
