@@ -55,4 +55,9 @@ public class UserServiceTest extends BaseTest{
         User user1 = this.userService.find(id);
         LOG.info("{}",user1);
     }
+	
+	@Test(expected=RuntimeException.class)
+	public void testTransactional(){
+	    this.userService.transactional(1,"事务：name","事务:mobile");
+	}
 }

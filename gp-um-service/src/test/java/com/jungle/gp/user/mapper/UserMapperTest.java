@@ -37,6 +37,7 @@ public class UserMapperTest extends BaseTest {
         user.setName("修改昵称");
         user.setWeixinId("weixinId2");
         int rows = userMapper.update(user);
+        
         Assert.assertEquals(1, rows);
     }
 

@@ -1,1 +1,50 @@
-# gameplatform
+# 技术线工作展开过程日志
+
+1. 收集重要功能点
+    1. 用思维导图显示功能点
+    2. 绘制系统结构图
+2. 划分子系统
+3. 确定重要技术点
+4. 搭建项目基础框架
+    1. 建maven工程
+        1. 创建顶级父工程
+            - 包类型选择pom
+            - 继承父级pom配置（spring-boot-starter-parent）
+        2. 创建web工程
+            - 包类型选择war
+            - 继承`'顶级父工程'`配置
+            - 引入依赖的jar包（不用指定jar包版本号，延用父级配置版本）
+                - spring-boot-starter-web
+                - spring-boot-starter-tests
+            - 定义应用启动类
+                - 添加启动类注解 @SpringBootApplication
+                - 由SpringApplication类，启动应用
+            - 定义web窗口部署类
+                - 扩展SpringBootServletInitializer类
+            - 定义单元测试抽象类
+        3. 创建服务工程
+            - 包类型选择jar
+            - 继承`'顶级父工程'`配置
+            - 引入依赖的jar包（不用指定jar包版本号，延用父级配置版本）
+                - spring-boot-starter
+                - spring-boot-starter-tests
+            - 定义应用启动类
+                - 添加启动类注解 @SpringBootApplication
+                - 由SpringApplication类，启动应用
+            - 定义单元测试抽象类
+                - 基本单元测试类
+                - mvc单元测试类
+            - 配置日志
+            - JPA示例（简单的CRUD操作）
+                - 编写实体类，添加@Entity注解
+                - 编写数据操作接口类，扩展PagingAndSortingRepository（自带CRUD基本方法及翻页查询方法）
+            - Mybatis配置及示例
+                - 编写数据操作接口类，添加@Mapper注解
+            - mongodb、redis的配置使用
+            - 事务管理
+            - 缓存机制（基于redis）
+    2. 封装控制层响应数据
+    3. 异常处理
+        1. 定义异常类
+        2. 异常处理
+    4. lombok 的使用
